@@ -5,7 +5,7 @@ Acontinuación, calcular el número de segundos que tiene un año y almacenarel 
 Realizar preferiblemente mediante una función que reciba como parámetros el número de años, meses y días y devuelva 
 el número de segundos de los días, meses y años introducidos.*/
 
-public class Ejercicio1 {
+public class ejercicio1 {
     public static void main(String[] args) {
         int diasEnUnAnio = 365;
         int horasEnUnDia = 24;
