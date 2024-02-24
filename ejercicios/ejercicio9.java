@@ -7,22 +7,32 @@ import java.util.Scanner;
 
 public class ejercicio9 {
     public static void main(String[] args) {
-        int[] vector1 = LLenarVector();
-        int[] vector2 =LLenarVector();
-        int productoEscalar = ProductoEscalar(vector1, vector2);
+        int dimension;
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Dimensión:");
+        dimension = leer.nextInt();
+        int[] vector1 = LLenarVector(dimension);
+        int[] vector2 = LLenarVector(dimension);
+        int productoEscalar = ProductoEscalar(vector1, vector2, dimension);
         System.out.println("El productor escalar es: " +productoEscalar);
      }
     
-     public static int[] LLenarVector(){
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Numero de elementos del vector:");
-        int numeroelementosvector = leer.nextInt();
-        int[] vector = new int [numeroelementosvector];
-        for (int i=0; i<numeroelementosvector;i++){
+     public static int[] LLenarVector(int dimension){
+        int[] vector = new int [dimension];
+        for (int i=0; i<dimension;i++){
+            Scanner leerdimension = new Scanner(System.in);
             System.out.println("Elemento"+i+":");
-            vector[i]=leer.nextInt();
+            vector[i]=leerdimension.nextInt();
         }
         return vector;
+     }
+
+     public static int ProductoEscalar(int[] vector1, int[] vector2, int dimension){
+        int productoEscalar = 0;
+        for(int i=0;i<dimension;i++){
+            productoEscalar += vector1[i]*vector2[i];
+        }
+        return productoEscalar;
      }
 
 }
