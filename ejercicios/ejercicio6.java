@@ -20,15 +20,19 @@ public class ejercicio6 {
     }
     public static int[] Primos(int N){
         int[] primos = new int [N];
-        for(int i=0;i<=N;i++){
-            for(int j=2;j<N;j++){
-                if(i%j==0){
-                    break;
-                }else {
-                    primos[i]=j;
+        if(N == 0 || N == 1 || N == 4){
+            // continue da error
+        } else {
+            for (int x = 2; x < N / 2; x++){
+                if (N % x == 0){
+                    primos[N]=x;
                 }
             }
         }
         return primos;
     }
+    
 }
+
+
+
